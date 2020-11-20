@@ -1,6 +1,6 @@
 //
-//  RestaurantListViewController.swift
-//  NarrowItDown
+//  LocationFinder.swift
+//  LocationFinder
 //
 //  Created by Elizabeth Kiernan on 4/6/20.
 //  Copyright © 2020 Elizabeth Kiernan. All rights reserved.
@@ -28,7 +28,7 @@ class LocationFinder: UIViewController, CLLocationManagerDelegate {
         placesClient = GMSPlacesClient.shared()
         
         func didFinishLaunchingWithOptions () {
-            GMSPlacesClient.provideAPIKey("API Key")
+            GMSPlacesClient.provideAPIKey("API Key omitted for security")
         }
         
         
