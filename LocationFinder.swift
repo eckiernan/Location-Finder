@@ -27,20 +27,19 @@ class LocationFinder: UIViewController, CLLocationManagerDelegate {
         
         placesClient = GMSPlacesClient.shared()
         
+        // provide API key
         func didFinishLaunchingWithOptions () {
             GMSPlacesClient.provideAPIKey("API Key omitted for security")
         }
-        
-        
+
         let placesClient = GMSPlacesClient.shared()
         
+        // Printed errors if place is not found
         placesClient.currentPlace { (likelihoodlist, error) -> Void in
-            
             if error != nil {
                 print("Current Place error: \(error!.localizedDescription)")
                 return
-            }
-            
+            } 
             
             placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
                 if let error = error {
@@ -48,6 +47,7 @@ class LocationFinder: UIViewController, CLLocationManagerDelegate {
                     return
                 }
                 
+                // Assigns and prints name and address of current place to labels                            
                 self.nameLabel.text = "No current place"
                 self.addressLabel.text = ""
                 
@@ -61,8 +61,6 @@ class LocationFinder: UIViewController, CLLocationManagerDelegate {
                     }
                 }
             })
-            
         }
-        
     }
 }
